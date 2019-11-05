@@ -3,5 +3,5 @@ class Author < ApplicationRecord
         first_name.concat(" ", last_name)
     end
 
-    validates :last_name, presence: true, length: {minimum:5}
+    validates :last_name, presence: true
 end

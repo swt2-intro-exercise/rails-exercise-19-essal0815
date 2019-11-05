@@ -24,4 +24,12 @@ describe "New author page", type: :feature do
     author = Author.where(:first_name => 'Alan', :last_name => 'Turing').first
     expect(author.name).to(eq("Alan Turing"))
   end
+
+  it "should render the errors for invalid input (missing last name)" do
+    visit new_author_path
+    page.fill_in 'author[first_name]', with: 'Alan'
+    page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
+    find('input[type="submit"]').click
+    expect(page).to have_text('Last name can\'t be blank')
+  end
 end
