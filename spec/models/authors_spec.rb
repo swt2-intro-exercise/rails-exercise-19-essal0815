@@ -8,4 +8,9 @@ RSpec.describe Author, type: :model do
     expect(author.homepage).to(eq('wikipedia.org/Alan_Turing'))
     expect(author.name).to(eq('Alan Turing'))
   end
+
+  it 'should check for invalid authors' do
+    @author = Author.new(first_name:'Alan', homepage:'wikipedia.org/Alan_Turing')
+    expect(@author).to_not be_valid
+  end
 end
