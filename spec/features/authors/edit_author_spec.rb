@@ -24,5 +24,5 @@ describe "Author edit page", type: :feature do
         find('input[type="submit"]').click
         @author.reload
         expect(@author.last_name).to(eq("Test"))
-      end
+    end
 end
