@@ -3,3 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', authors_path %>
+<%= link_to 'Delete', author_path(@author), data: { method: "delete", confirm: 'Are you sure?' } %>

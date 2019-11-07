@@ -25,4 +25,9 @@ describe "Author edit page", type: :feature do
         @author.reload
         expect(@author.last_name).to(eq("Test"))
     end
+
+    it "should have back button" do
+        visit edit_author_path(@author)
+        expect(page).to have_css("a[href='#{authors_path}']")
+    end
 end

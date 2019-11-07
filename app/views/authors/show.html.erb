@@ -8,3 +8,6 @@
   <strong>Homepage</strong>
   <%= @author.homepage %>
 </p>
+
+<%= link_to 'Edit', edit_author_path(@author) %>
+<%= link_to 'Delete', author_path(@author), data: { method: "delete", confirm: 'Are you sure?' } %>
